@@ -37,3 +37,8 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`🌐 Server is running on port ${port}`);
 });
+
+console.log("✅ ENV Loaded:", {
+    MY: process.env.MY_WHATSAPP_NUMBER,
+    TWILIO: process.env.TWILIO_WHATSAPP_NUMBER
+  });
