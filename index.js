@@ -17,12 +17,12 @@ const sendMessage = (message) => {
 };
 
 // Jadwal pengiriman pesan jam 17:00 (Persiapan Soal)
-schedule.scheduleJob('0 17 * * *', () => {
+schedule.scheduleJob('35 15 * * *', () => {
     sendMessage("⏰ Saatnya menyiapkan soal diskusi dan tugas! Jangan lupa persiapkan materi.");
 });
 
 // Jadwal pengiriman pesan jam 19:00 (Mulai Kerja Tugas)
-schedule.scheduleJob('31 15 * * *', () => {
+schedule.scheduleJob('40 15 * * *', () => {
     sendMessage("📚 Waktunya mengerjakan tugas dan diskusi! Tetap semangat 💪");
 });
 
