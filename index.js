@@ -26,16 +26,14 @@ schedule.scheduleJob('46 19 * * *', () => {
     sendMessage("📚 Waktunya mengerjakan tugas dan diskusi! Tetap semangat 💪");
 });
 
-console.log("✅ WhatsApp Reminder Bot is running...");
-
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
-  res.send("WhatsApp Reminder Bot is running...");
+  res.send('WhatsApp Reminder Bot is active!');
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🌐 Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`🌐 Server is running on port ${port}`);
 });
