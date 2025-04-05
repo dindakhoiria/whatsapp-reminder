@@ -22,7 +22,7 @@ schedule.scheduleJob('0 17 * * *', () => {
 });
 
 // Jadwal pengiriman pesan jam 19:00 (Mulai Kerja Tugas)
-schedule.scheduleJob('22 15 * * *', () => {
+schedule.scheduleJob('31 15 * * *', () => {
     sendMessage("📚 Waktunya mengerjakan tugas dan diskusi! Tetap semangat 💪");
 });
 
@@ -42,3 +42,12 @@ console.log("✅ ENV Loaded:", {
     MY: process.env.MY_WHATSAPP_NUMBER,
     TWILIO: process.env.TWILIO_WHATSAPP_NUMBER
   });
+
+  // Self-ping to keep container alive
+setInterval(() => {
+    http.get(`http://localhost:${port}/`, (res) => {
+      console.log(`🔁 Self-ping sukses: ${res.statusCode}`);
+    }).on("error", (err) => {
+      console.error("Self-ping error:", err.message);
+    });
+  }, 1000 * 60 * 4);
