@@ -22,7 +22,7 @@ schedule.scheduleJob('0 17 * * *', () => {
 });
 
 // Jadwal pengiriman pesan jam 19:00 (Mulai Kerja Tugas)
-schedule.scheduleJob('46 19 * * *', () => {
+schedule.scheduleJob('15 17 * * *', () => {
     sendMessage("📚 Waktunya mengerjakan tugas dan diskusi! Tetap semangat 💪");
 });
 
